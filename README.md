@@ -1,7 +1,7 @@
 # Proyecto Backend - Sistema de Gestión de Biblioteca
 
 ## Información del Alumno
-- Nombre y Apellido: [Completar]
+- Nombre y Apellido: [Ilán Fischer]
 - Curso: 5to Año
 - Especialidad: Informática
 
