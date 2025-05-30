@@ -1,37 +1,32 @@
 ### Obtener todos los libros
-GET http://127.0.0.1:5000/libros
+GET http://localhost:5000/libros
+Accept: application/json
 
 ### Crear un nuevo libro
-POST http://127.0.0.1:5000/libros
+POST http://localhost:5000/libros
 Content-Type: application/json
 
 {
   "titulo": "Cien años de soledad",
   "autor": "Gabriel García Márquez",
-  "anio_publicacion": 1967
+  "anho": 1967,
+  "isbn": "9780307474728"
 }
 
-### Actualizar un libro existente
-PUT http://127.0.0.1:5000/libros/1
+### Obtener un libro por id
+GET http://localhost:5000/libros/1
+Accept: application/json
+
+### Modificar un libro por id
+PUT http://localhost:5000/libros/1
 Content-Type: application/json
 
 {
   "titulo": "Cien años de soledad (Edición revisada)",
   "autor": "Gabriel García Márquez",
-  "anio_publicacion": 1967
+  "anho": 1967,
+  "isbn": "9780307474728"
 }
 
-### Eliminar un libro
-DELETE http://127.0.0.1:5000/libros/1
-
-### Buscar libros por título
-GET http://127.0.0.1:5000/libros/buscar?titulo=Cien
-
-### Filtrar libros por categoría
-GET http://127.0.0.1:5000/libros/buscar?categoria=Novela
-
-### Ordenar libros por autor
-GET http://127.0.0.1:5000/libros/buscar?orden=autor
-
-### Paginación de libros
-GET http://127.0.0.1:5000/libros/buscar?pagina=1&tamano=5
+### Eliminar un libro por id
+DELETE http://localhost:5000/libros/1
