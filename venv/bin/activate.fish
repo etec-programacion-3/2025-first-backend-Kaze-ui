@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV /home/etec/2025-first-backend-Kaze-ui/venv
+set -gx VIRTUAL_ENV /home/etec/Escritorio/2025-first-backend-Kaze-ui/venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH

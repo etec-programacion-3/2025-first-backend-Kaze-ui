@@ -1,8 +1,11 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
-app = Flask(__name__)
+
+# Servir el frontend desde la carpeta correspondiente
+app = Flask(__name__, static_folder='../2025-first-basic-frontend-Kaze-ui', static_url_path='')
+
 CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///libros.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -71,7 +74,12 @@ def eliminar_libro(id):
     db.session.commit()
     return jsonify({'mensaje': 'Libro eliminado exitosamente'})
 
+# Servir el frontend desde Flask en el mismo puerto
+@app.route('/')
+def index():
+    return send_from_directory(app.static_folder, 'Front_Ilán_Fischer.html')
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
